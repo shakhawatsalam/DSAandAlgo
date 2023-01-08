@@ -204,7 +204,7 @@ function ceilingSearch(arr, target) {
 
 console.log(ceilingSearch(ceilingArray, 57));
 
-
+// Read the comment 
 // assignment problem number no last after flooring and ceiling
 
 

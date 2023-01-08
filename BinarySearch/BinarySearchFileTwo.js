@@ -26,26 +26,26 @@ let tergetIndices = function (nums, target) {
 // =============  END  ================>>>>
 
 // 1539. Kth Missing Positive Number
-let arr = [2];
-let k = 1;
-let missingArray = [];
+// let arr = [2];
+// let k = 1;
+// let missingArray = [];
 
-let number = 1;
-let i = 0;
+// let number = 1;
+// let i = 0;
 
-while (true) {
-    if (number === arr[i]) {
-        i++;
-        number++;
-    } else {
-        missingArray.push(number);
-        number++;
+// while (true) {
+//     if (number === arr[i]) {
+//         i++;
+//         number++;
+//     } else {
+//         missingArray.push(number);
+//         number++;
 
-        if (missingArray.length > k) break;
-    }
-}
+//         if (missingArray.length > k) break;
+//     }
+// }
 
-console.log(missingArray[k - 1]);
+// console.log(missingArray[k - 1]);
 
 
 // var findKthPositive = function(arr, k) {
@@ -69,3 +69,149 @@ console.log(missingArray[k - 1]);
 // ===============================>>>>>
 // need to undrestant the above code
 // =============================>>>>
+
+
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// 744. Find Smallest Letter Greater Than Target
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// let ceilingArray = ["c","f","j"];
+
+
+// function ceilingSearch(arr, target) {
+//     let start = 0;
+//     let end = arr.length - 1;
+//     let mid;
+//     let result;
+//     let ceil;
+//     let aaa = arr[end] < target;
+//     if (aaa) {
+//         return 'target is too long'
+//     }
+
+
+
+
+//     while (start <= end) {
+//         mid = Math.floor((start + end) / 2);
+//         if (arr[mid] === target) {
+//             return `ceiling is ${arr[mid + 1]}`;
+//         } else if (arr[mid] < target) {
+//             start = mid + 1;
+//             console.log(arr[end] < target);
+//         }
+//         else {
+//             ceil = arr[mid]
+//             let floor = mid - 1;
+//             result = arr[floor];
+//             end = mid - 1;
+
+//         }
+
+//     };
+
+//     return `ceiling of targer ${target} floor is ${result} ceiling is ${ceil}`;
+// }
+
+
+// console.log(ceilingSearch(ceilingArray, "c"));
+
+
+// let arr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
+
+// function ceilingSearch(arr, target) {
+//     let start = 0;
+//     let end = arr.length - 1;
+//     console.log(end);
+//     let mid;
+//     let ceil;
+//     while (start <= end) {
+//         mid = Math.floor((start + end) / 2);
+//         if (arr[mid] === target) {
+//             return `ceiling is   ${arr[mid]}`
+//         } else if (arr[mid] < target) {
+//             start = mid + 1;
+
+//         } else {
+//             ceil = arr[mid];
+//             end = mid - 1;
+
+//         };
+
+//     };
+//     return `ceil is ${ceil}`
+// }
+
+
+// console.log(ceilingSearch(arr, 95));
+
+
+// let arr = ["c","f","j"];
+
+
+// function ceilingSearch(arr, target) {
+//     let start = 0;
+//     let end = arr.length - 1;
+//     if (arr[end] <= target) {
+//         return arr[0];
+//     }
+//     let mid;
+//     let ceil;
+//     while (start <= end) {
+//         mid = Math.floor((start + end) / 2);
+//         if (arr[mid] === target) {
+//             return `ceiling is   ${arr[mid + 1]}`
+//         }
+//         else if (arr[mid] < target) {
+//             start = mid + 1;
+
+//         } else {
+//             ceil = arr[mid];
+//             end = mid - 1;
+
+//         };
+
+//     };
+//     return ceil
+// }
+
+
+// console.log(ceilingSearch(arr, 'a'));
+
+
+
+
+// var nextGreatestLetter = function (letters, target) {
+//     console.log(letters);
+//     console.log(target);
+//     let start = 0;
+//     let end = letters.length - 1;
+//     if (letters[end] <= target) {
+//         return letters[0];
+//     }
+//     let mid;
+//     while (start <= end) {
+//         mid = Math.floor((start + end) / 2);
+//         if (letters[mid] === target) {
+//             for (let i = mid; i < letters.length; i++){
+//                 if (letters[mid] < letters[i]) {
+//                     return letters[i];
+//                 }
+//             }
+//             return letters[mid + 1]
+//         } else if (letters[mid] < target) {
+//             start = mid + 1;
+
+//         } else {
+//             ceil = letters[mid];
+//             end = mid - 1;
+
+//         };
+
+//     };
+//     return ceil
+// };
+
+// console.log(nextGreatestLetter(["e","e","e","e","e","e","n","n","n","n"], "e"));
