@@ -1,18 +1,18 @@
 // 2089. Find Target Indices After Sorting Array
 
-let target = 6;
-let nums = [48, 90, 9, 21, 31, 35, 19, 69, 29, 52, 100, 54, 21, 86, 6, 45, 42, 5, 62, 77, 15, 38];
-let tergetIndices = function (nums, target) {
-    let sortedArray = nums.sort();
-    let output = [];
-    for (let i = 0; i < sortedArray.length; i++) {
-        if (sortedArray[i] === target) {
-            output.push(i)
+// let target = 6;
+// let nums = [48, 90, 9, 21, 31, 35, 19, 69, 29, 52, 100, 54, 21, 86, 6, 45, 42, 5, 62, 77, 15, 38];
+// let tergetIndices = function (nums, target) {
+//     let sortedArray = nums.sort();
+//     let output = [];
+//     for (let i = 0; i < sortedArray.length; i++) {
+//         if (sortedArray[i] === target) {
+//             output.push(i)
 
-        }
-    }
-    return output;
-};
+//         }
+//     }
+//     return output;
+// };
 
 
 
@@ -215,3 +215,37 @@ let tergetIndices = function (nums, target) {
 // };
 
 // console.log(nextGreatestLetter(["e","e","e","e","e","e","n","n","n","n"], "e"));
+
+
+// =================================>>>
+// 35. Search Insert Position
+// =================================>>>
+
+let arr = [1, 3, 5, 6];
+let target = 7;
+Output: 2
+
+var searchInsert = function (nums, target) {
+    console.log(nums);
+    let low = 0;
+    let high = nums.length - 1;
+    let mid;
+    // mid = Math.floor((high + low) / 2);
+    // console.log(high);
+    // console.log(mid);
+
+    while (low <= high) {
+        mid = Math.floor((high + low) / 2);
+        if (nums[mid] === target) {
+            return mid;
+        } else if (nums[mid] < target) {
+            low = mid + 1;
+        } else {
+            high = mid - 1
+        };
+
+    }
+    return low;
+}
+
+console.log(searchInsert(arr, target));
