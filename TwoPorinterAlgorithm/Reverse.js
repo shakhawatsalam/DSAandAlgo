@@ -75,9 +75,15 @@ console.log(arr.length);
 function SelectionSort(arr) {
     for (let i = 0; i < arr.length - 1; i++) {
         let smallest = i;
+        console.log(smallest);
         for (let j = i + 1; j < arr.length; j++) {
+            // console.log(i);
+            // console.log(j);
+    //  console.log(arr[smallest]);
+            // console.log(arr[j]);
             if (arr[smallest] > arr[j]) {
                 smallest = j;
+                // console.log(smallest);
             }
         }
         let temp = arr[smallest];
