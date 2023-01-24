@@ -102,7 +102,7 @@
 // <========== Insertion Sort ==========>>
 
 // let arr = [7, 8, 3, 1, 2];
-        // 0, 1, 2, 3, 4
+// 0, 1, 2, 3, 4
 //insertion sort
 // for (let i = 1; i < arr.length; i++){
 //     let current = arr[i]; console.log(current);
@@ -123,24 +123,60 @@
 
 
 // <========== Palindrome ==========>>
+// 2108. Find First Palindromic String in the Array
+// ==> This solution is from Two Pointer Algo Class.
+function isPlindrome(str) {
+        let i = 0;
+        let k = str.length - 1;
 
-// function isPlindrome(str) {
-//         let i = 0;
-//         let k = str.length - 1;
+        while (i <= k) {
+                if (str[i] != str[k]) {
+                        return false;
+                }
+                i++;
+                k--;
+        }
+        return true;
+};
 
-//         while (i <= k) {
-//                 if (str[i] != str[k]) {
-//                         return false;
-//                 }
-//                 i++;
-//                 k--;
-//         }
-//         return true;
-// }
+function leetcode2108(arr) {
+        for (let i = 0; i < arr.length; i++) {
+                if (isPlindrome(arr[i])) {
+                        return arr[i];
+                }
+        }
+        return "";
+}
+
+console.log(leetcode2108(["abc", "car", "ada", "racecar", "cool"]));
 
 // console.log(isPlindrome('madam'));
 // console.log(isPlindrome('racecar'));
 // console.log(isPlindrome('mom'));
 // console.log(isPlindrome('dad'));
 // console.log(isPlindrome('Shawon'));
+
+
+// 2108. Find First Palindromic String in the Array
+// => this solution is from let code.
+let words = ["abc", "car", "ada", "racecar", "cool"]
+var firstPalindrome = function (words) {
+        for (let i = 0; i < words.length; i++) {
+                console.log(words[i]);
+                const word = words[i];
+                let isPalindromic = true;
+                console.log(word.length);
+                for (let j = 0; j < word.length / 2; j++) {
+                        if (word[j] !== word[word.length - j - 1]) {
+                                isPalindromic = false;
+                                break;
+                        };
+                };
+                if (isPalindromic) return word;
+        };
+        return '';
+};
+
+console.log(firstPalindrome(words));  //need to undrestand again
+
 
