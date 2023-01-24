@@ -70,38 +70,77 @@
 
 //<<==========Selection Sort ==========>>
 
-let arr = [7, 8, 3, 1, 2];
-console.log(arr.length);
-function SelectionSort(arr) {
-    for (let i = 0; i < arr.length - 1; i++) {
-        let smallest = i;
-        console.log(smallest);
-        for (let j = i + 1; j < arr.length; j++) {
-            // console.log(i);
-            // console.log(j);
-    //  console.log(arr[smallest]);
-            // console.log(arr[j]);
-            if (arr[smallest] > arr[j]) {
-                smallest = j;
-                // console.log(smallest);
-            }
-        }
-        let temp = arr[smallest];
-        arr[smallest] = arr[i];
-        arr[i] = temp;
-    }
-    return arr;
-}
+// let arr = [7, 8, 3, 1, 2];
+// console.log(arr.length);
+// function SelectionSort(arr) {
+//     for (let i = 0; i < arr.length - 1; i++) {
+//         let smallest = i;
+//         console.log(smallest);
+//         for (let j = i + 1; j < arr.length; j++) {
+//             // console.log(i);
+//             // console.log(j);
+//     //  console.log(arr[smallest]);
+//             // console.log(arr[j]);
+//             if (arr[smallest] > arr[j]) {
+//                 smallest = j;
+//                 // console.log(smallest);
+//             }
+//         }
+//         let temp = arr[smallest];
+//         arr[smallest] = arr[i];
+//         arr[i] = temp;
+//     }
+//     return arr;
+// }
 
-console.log(SelectionSort(arr));
-
-
-
+// console.log(SelectionSort(arr));  // Output:-- [1, 2, 3, 7, 8];
+// Time complexity ==  o(n^2);
 
 
 
 
+// <========== Insertion Sort ==========>>
+
+// let arr = [7, 8, 3, 1, 2];
+        // 0, 1, 2, 3, 4
+//insertion sort
+// for (let i = 1; i < arr.length; i++){
+//     let current = arr[i]; console.log(current);
+//     let j = i - 1;
+//     console.log(j);
+//     console.log(arr[j]);
+//     while (j >= 0 && current < arr[j]) {
+//         arr[j + 1] = arr[j];
+//         j--;
+//     };
+//     //placement
+//     arr[j + 1] = current;
+// }
+// console.log(arr);
+
+/// Boja gasa kinto abar revise korta hobeaa..
 
 
 
+// <========== Palindrome ==========>>
+
+// function isPlindrome(str) {
+//         let i = 0;
+//         let k = str.length - 1;
+
+//         while (i <= k) {
+//                 if (str[i] != str[k]) {
+//                         return false;
+//                 }
+//                 i++;
+//                 k--;
+//         }
+//         return true;
+// }
+
+// console.log(isPlindrome('madam'));
+// console.log(isPlindrome('racecar'));
+// console.log(isPlindrome('mom'));
+// console.log(isPlindrome('dad'));
+// console.log(isPlindrome('Shawon'));
 
