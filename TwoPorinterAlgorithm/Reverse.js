@@ -125,30 +125,30 @@
 // <========== Palindrome ==========>>
 // 2108. Find First Palindromic String in the Array
 // ==> This solution is from Two Pointer Algo Class.
-function isPlindrome(str) {
-        let i = 0;
-        let k = str.length - 1;
+// function isPlindrome(str) {
+//         let i = 0;
+//         let k = str.length - 1;
 
-        while (i <= k) {
-                if (str[i] != str[k]) {
-                        return false;
-                }
-                i++;
-                k--;
-        }
-        return true;
-};
+//         while (i <= k) {
+//                 if (str[i] != str[k]) {
+//                         return false;
+//                 }
+//                 i++;
+//                 k--;
+//         }
+//         return true;
+// };
 
-function leetcode2108(arr) {
-        for (let i = 0; i < arr.length; i++) {
-                if (isPlindrome(arr[i])) {
-                        return arr[i];
-                }
-        }
-        return "";
-}
+// function leetcode2108(arr) {
+//         for (let i = 0; i < arr.length; i++) {
+//                 if (isPlindrome(arr[i])) {
+//                         return arr[i];
+//                 }
+//         }
+//         return "";
+// }
 
-console.log(leetcode2108(["abc", "car", "ada", "racecar", "cool"]));
+// console.log(leetcode2108(["abc", "car", "ada", "racecar", "cool"]));
 
 // console.log(isPlindrome('madam'));
 // console.log(isPlindrome('racecar'));
@@ -159,24 +159,52 @@ console.log(leetcode2108(["abc", "car", "ada", "racecar", "cool"]));
 
 // 2108. Find First Palindromic String in the Array
 // => this solution is from let code.
-let words = ["abc", "car", "ada", "racecar", "cool"]
-var firstPalindrome = function (words) {
-        for (let i = 0; i < words.length; i++) {
-                console.log(words[i]);
-                const word = words[i];
-                let isPalindromic = true;
-                console.log(word.length);
-                for (let j = 0; j < word.length / 2; j++) {
-                        if (word[j] !== word[word.length - j - 1]) {
-                                isPalindromic = false;
-                                break;
-                        };
-                };
-                if (isPalindromic) return word;
-        };
-        return '';
-};
+// let words = ["abc", "car", "ada", "racecar", "cool"]
+// var firstPalindrome = function (words) {
+//         for (let i = 0; i < words.length; i++) {
+//                 console.log(words[i]);
+//                 const word = words[i];
+//                 let isPalindromic = true;
+//                 console.log(word.length);
+//                 for (let j = 0; j < word.length / 2; j++) {
+//                         if (word[j] !== word[word.length - j - 1]) {
+//                                 isPalindromic = false;
+//                                 break;
+//                         };
+//                 };
+//                 if (isPalindromic) return word;
+//         };
+//         return '';
+// };
 
-console.log(firstPalindrome(words));  //need to undrestand again
+// console.log(firstPalindrome(words));  //need to undrestand again
 
 
+//Class Nubmer__5 Tow pointer Algorithm assignment Problem
+
+//merging tow array and sort it
+
+function addTwoArraysAndSort(arr1, arr2) {
+    // merging the array
+    let start = arr1.length;
+    for (let i = 0; i < arr2.length; i++){
+        arr1[start++] = arr2[i];
+    };
+    //Sorting the array with insertion sort
+    for (let s = 1; s < arr1.length; s++){
+        let current = arr1[s];
+        let j = s - 1; 
+
+        while (j >= 0 && current < arr1[j]) {
+            arr1[j + 1] = arr1[j];
+            j--;
+        }
+        arr1[j + 1] = current;
+    }
+    return arr1;
+}
+
+
+console.log(addTwoArraysAndSort([5, 10, 15, 20, 25, 30], [15,23,25,30,35]));
+
+// Assignment problem is solved;
