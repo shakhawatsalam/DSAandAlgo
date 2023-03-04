@@ -39,62 +39,70 @@
 
 
 //<<========== From Apna College ==========>>
+
 // <<========== Bubble Sort ==========>>
 
-// let arr = [7, 8, 3, 1, 2];
-// console.log(arr.length);
-// function BubbleSort(arr) {
-//     for (let i = 0; i < arr.length - 1; i++) {
-//         console.log(i)
-//         for (let j = 0; j < arr.length - i - 1; j++) {
-//             console.log(i)
-//             console.log(arr.length - i - 1);
-//             console.log(j);
-//             console.log(arr[j]);
-//         console.log(arr[j + 1]);
-//             if (arr[j] > arr[j + 1]) {
-//                 //swap
-//                 console.log(arr[j])
-//                 let temp = arr[j];
-//                 arr[j] = arr[j + 1];
-//                 arr[j + 1] = temp;
-//             };
-//         };
-//     };
-//     return arr;
-// }
+let arr = [7, 8, 3, 1, 2];
+// i = 0;
+// 1st = [7, 8, 3, 1, 2]; 0 = j
+// 2st = [7, 3, 8, 1, 2]; 1 = j
+// 3st = [7, 3, 1, 8, 2]; 2 = j
+// 4st = [7, 3, 1, 2, 8]; 3 = j
+// off == 4 < 4
+// i = 1;
+//  1st = [3, 7, 1, 2, 8]; 0 = j
+//  1st = [3, 1, 7, 2, 8]; 1 = j
+//  1st = [3, 1, 2, 7, 8]; 2 = j
+// i = 2
+// 1st = [1, 3, 2, 7, 8]; 0 = j
+// 1st = [1, 2, 3, 7, 8]; 0 = j
 
+function BubbleSort(arr) {
+    for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = 0; j < arr.length - i - 1; j++) {   // for both loop arr.length is """5"""
+            console.log(i)
+            if (arr[j] > arr[j + 1]) {
+                //swap
+                let temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            };
+        };
+    };
+    return arr;
+}
 // console.log(BubbleSort(arr)); // Output:-- [1, 2, 3, 7, 8];
 // Time complexity ==  o(n^2);
 
 
 //<<==========Selection Sort ==========>>
 
-// let arr = [7, 8, 3, 1, 2];
-// console.log(arr.length);
+// let arr = [7, 8, 3, 1, 2]; // arr.length -----> 5
+// // [1, 8, 3 ,7, 2]
+// // [1, 2, 3 ,7, 8]
+
 // function SelectionSort(arr) {
 //     for (let i = 0; i < arr.length - 1; i++) {
 //         let smallest = i;
-//         console.log(smallest);
+//         // console.log(i)
+//         // console.log(smallest);
 //         for (let j = i + 1; j < arr.length; j++) {
-//             // console.log(i);
-//             // console.log(j);
-//     //  console.log(arr[smallest]);
-//             // console.log(arr[j]);
+
 //             if (arr[smallest] > arr[j]) {
-//                 smallest = j;
-//                 // console.log(smallest);
+//                 smallest = j;  // 3
 //             }
 //         }
-//         let temp = arr[smallest];
+
+//         let temp = arr[smallest]; 1
 //         arr[smallest] = arr[i];
 //         arr[i] = temp;
 //     }
 //     return arr;
 // }
 
-// console.log(SelectionSort(arr));  // Output:-- [1, 2, 3, 7, 8];
+// console.log(SelectionSort(arr), "ANS");  // Output:-- [1, 2, 3, 7, 8];
 // Time complexity ==  o(n^2);
+
 
 
 
